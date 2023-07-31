@@ -23,6 +23,28 @@ const loginFields=[
 
 const signupFields=[
     {
+        labelText:"First Name",
+        labelFor:"firstName",
+        id:"firstName",
+        name:"firstName",
+        type:"text",
+        autoComplete:"firstName",
+        isRequired:true,
+        placeholder:"First Name" ,
+        className:" w-1/2"  
+    },
+    {
+        labelText:"Last Name",
+        labelFor:"lastName",
+        id:"lastName",
+        name:"lastName",
+        type:"text",
+        autoComplete:"lastName",
+        isRequired:true,
+        placeholder:"Last Name"  ,
+        className:" w-1/2"   
+    },
+    {
         labelText:"Username",
         labelFor:"username",
         id:"username",
@@ -30,7 +52,8 @@ const signupFields=[
         type:"text",
         autoComplete:"username",
         isRequired:true,
-        placeholder:"Username"   
+        placeholder:"Username" ,
+        className:" w-full"    
     },
     {
         labelText:"Email address",
@@ -40,7 +63,8 @@ const signupFields=[
         type:"email",
         autoComplete:"email",
         isRequired:true,
-        placeholder:"Email address"   
+        placeholder:"Email address"  ,
+        className:" w-full"   
     },
     {
         labelText:"Password",
@@ -50,17 +74,8 @@ const signupFields=[
         type:"password",
         autoComplete:"current-password",
         isRequired:true,
-        placeholder:"Password"   
-    },
-    {
-        labelText:"Confirm Password",
-        labelFor:"confirm-password",
-        id:"confirm-password",
-        name:"confirm-password",
-        type:"password",
-        autoComplete:"confirm-password",
-        isRequired:true,
-        placeholder:"Confirm Password"   
+        placeholder:"Password"   ,
+        className:" w-full"  
     }
 ]
 

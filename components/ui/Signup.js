@@ -23,19 +23,6 @@ export default function Signup(){
     createAccount()
   }
 
-  const handleSubmitWithKeycloak=async (e)=>{
-    e.preventDefault();
-    const keycloak=new Keycloak(keycloakConfig);
-    const registered=await keycloak.init({checkLoginIframe:false});
-    console.log(registered)
-    if(!registered)
-    {
-        debugger
-        const created=await keycloak.register({redirectUri:"http://localhost:3000/LoginPage"});
-        
-    }
-    
-  }
 
   //handle Signup API Integration here
   const createAccount=async ()=>{
@@ -48,7 +35,7 @@ export default function Signup(){
     if(response.status===200){
       localStorage.setItem("loggedInUser",JSON.stringify(response.data))
       alert("User Created!")
-      Router.push('/Dashboard')
+      Router.push('/LoginPage')
     }
   }
 
@@ -72,11 +59,8 @@ export default function Signup(){
                 
                 )
             }
-          <FormAction handleSubmit={handleSubmit} handleSubmitWithKeycloak={handleSubmitWithKeycloak} text="Signup" />
+          <FormAction handleSubmit={handleSubmit}  text="Signup" />
         </div>
-
-         
-
       </form>
     )
 }
