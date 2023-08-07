@@ -14,13 +14,15 @@ Set up [Keycloak](https://github.com/keycloak/keycloak/releases/download/22.0.1/
 ```bash
 ./kc.bat start-dev --db mysql --db-url-host localhost --db-username your-username --db-password your-pass --hostname-strict=false
 ```
-Keycloak server will be up at [localhost:8080](http://localhost:8080). Create your realm and client inside. See the documentation for it.
+Keycloak server will be up at [localhost:8080](http://localhost:8080). Create your realm and client inside. Upon creating a client for the application, make sure you put a valid redirect uri in the client configuration in the format as 'http://your-base-url/*' and your web origin uri as 'http://your-base-url'. See the documentation for it.
 
 ## Usage
 Inside the components/constants lies keycloak configuration. Enter your keycloak server's configuration. Now add mongodb configuration in .env file and start the Next app using:
 ```bash
 npm run dev
 ```
+Also change your base uri in components/constants to your own if you are using other than 'http://localhost:3000/'
+
 Login page will appear and it has two options for signing in. One option is using keycloak and other one using mongodb.
 
 Same goes for Signing Up.

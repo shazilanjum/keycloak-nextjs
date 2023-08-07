@@ -9,6 +9,7 @@ import { useRouter  } from 'next/navigation'
 
 import  Router  from 'next/router';
 import axios from 'axios';
+import { baseUri } from '../constants/baseUri';
 
 
 const fields = loginFields;
@@ -33,7 +34,7 @@ export default function Login() {
   const handleSubmitWithKeycloak=async (e)=>{
     e.preventDefault()
     const keycloak=new Keycloak(keycloakConfig);
-    const authenticated=await keycloak.init({onLoad:"login-required",checkLoginIframe:false,redirectUri:"http://localhost:3000/Dashboard"})
+    const authenticated=await keycloak.init({onLoad:"login-required",checkLoginIframe:false,redirectUri:`${baseUri}/Dashboard`})
   }
   //Handle Login API Integration here
   const authenticateUser = async () => {
